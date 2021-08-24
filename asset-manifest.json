@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/flex-react/static/css/main.a617e044.chunk.css",
-    "main.js": "/flex-react/static/js/main.857fc724.chunk.js",
-    "main.js.map": "/flex-react/static/js/main.857fc724.chunk.js.map",
-    "runtime-main.js": "/flex-react/static/js/runtime-main.c2a5ec6f.js",
-    "runtime-main.js.map": "/flex-react/static/js/runtime-main.c2a5ec6f.js.map",
+    "main.css": "/flex-react/static/css/main.71090e71.chunk.css",
+    "main.js": "/flex-react/static/js/main.eada4a42.chunk.js",
+    "main.js.map": "/flex-react/static/js/main.eada4a42.chunk.js.map",
+    "runtime-main.js": "/flex-react/static/js/runtime-main.e9158a47.js",
+    "runtime-main.js.map": "/flex-react/static/js/runtime-main.e9158a47.js.map",
     "static/css/2.818011ed.chunk.css": "/flex-react/static/css/2.818011ed.chunk.css",
-    "static/js/2.0e8bfc83.chunk.js": "/flex-react/static/js/2.0e8bfc83.chunk.js",
-    "static/js/2.0e8bfc83.chunk.js.map": "/flex-react/static/js/2.0e8bfc83.chunk.js.map",
-    "static/js/3.a870d40c.chunk.js": "/flex-react/static/js/3.a870d40c.chunk.js",
-    "static/js/3.a870d40c.chunk.js.map": "/flex-react/static/js/3.a870d40c.chunk.js.map",
+    "static/js/2.108e61b8.chunk.js": "/flex-react/static/js/2.108e61b8.chunk.js",
+    "static/js/2.108e61b8.chunk.js.map": "/flex-react/static/js/2.108e61b8.chunk.js.map",
+    "static/js/3.79445019.chunk.js": "/flex-react/static/js/3.79445019.chunk.js",
+    "static/js/3.79445019.chunk.js.map": "/flex-react/static/js/3.79445019.chunk.js.map",
     "index.html": "/flex-react/index.html",
     "static/css/2.818011ed.chunk.css.map": "/flex-react/static/css/2.818011ed.chunk.css.map",
-    "static/css/main.a617e044.chunk.css.map": "/flex-react/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.0e8bfc83.chunk.js.LICENSE.txt": "/flex-react/static/js/2.0e8bfc83.chunk.js.LICENSE.txt",
+    "static/css/main.71090e71.chunk.css.map": "/flex-react/static/css/main.71090e71.chunk.css.map",
+    "static/js/2.108e61b8.chunk.js.LICENSE.txt": "/flex-react/static/js/2.108e61b8.chunk.js.LICENSE.txt",
     "static/media/logo.6ce24c58.svg": "/flex-react/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.c2a5ec6f.js",
+    "static/js/runtime-main.e9158a47.js",
     "static/css/2.818011ed.chunk.css",
-    "static/js/2.0e8bfc83.chunk.js",
-    "static/css/main.a617e044.chunk.css",
-    "static/js/main.857fc724.chunk.js"
+    "static/js/2.108e61b8.chunk.js",
+    "static/css/main.71090e71.chunk.css",
+    "static/js/main.eada4a42.chunk.js"
   ]
 }
