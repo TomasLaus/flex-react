@@ -1,13 +1,14 @@
 import { Container, Nav, Navbar, NavDropdown  } from "react-bootstrap";
 import logo from '../logo.svg';
 import "bootstrap/dist/css/bootstrap.min.css";
+import CartWidget from "./CartWidget";
 
 
 function NavBar() {
     return (
-        <div className="Navbar">
-        <Navbar expand="lg" variant="dark" bg="dark" fixed="top">
-        <Container>
+        <div className="Navbar" >
+        <Navbar expand="lg" variant="dark" bg="dark" fixed="top" >
+        <Container >
           <Navbar.Brand href="#home">Flex
           <img
             src={logo}
@@ -27,6 +28,7 @@ function NavBar() {
                 </NavDropdown>
               </Nav>
           </Navbar.Collapse>
+          <CartWidget/>
           </Container>
         </Navbar>
         </div>
