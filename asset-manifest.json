@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/flex-react/static/css/main.bcaaf846.chunk.css",
-    "main.js": "/flex-react/static/js/main.787b42ea.chunk.js",
-    "main.js.map": "/flex-react/static/js/main.787b42ea.chunk.js.map",
+    "main.js": "/flex-react/static/js/main.dbb49846.chunk.js",
+    "main.js.map": "/flex-react/static/js/main.dbb49846.chunk.js.map",
     "runtime-main.js": "/flex-react/static/js/runtime-main.815e5126.js",
     "runtime-main.js.map": "/flex-react/static/js/runtime-main.815e5126.js.map",
     "static/css/2.fb8cff11.chunk.css": "/flex-react/static/css/2.fb8cff11.chunk.css",
-    "static/js/2.4d97246e.chunk.js": "/flex-react/static/js/2.4d97246e.chunk.js",
-    "static/js/2.4d97246e.chunk.js.map": "/flex-react/static/js/2.4d97246e.chunk.js.map",
+    "static/js/2.d958ee70.chunk.js": "/flex-react/static/js/2.d958ee70.chunk.js",
+    "static/js/2.d958ee70.chunk.js.map": "/flex-react/static/js/2.d958ee70.chunk.js.map",
     "static/js/3.d9e4c495.chunk.js": "/flex-react/static/js/3.d9e4c495.chunk.js",
     "static/js/3.d9e4c495.chunk.js.map": "/flex-react/static/js/3.d9e4c495.chunk.js.map",
     "index.html": "/flex-react/index.html",
     "static/css/2.fb8cff11.chunk.css.map": "/flex-react/static/css/2.fb8cff11.chunk.css.map",
     "static/css/main.bcaaf846.chunk.css.map": "/flex-react/static/css/main.bcaaf846.chunk.css.map",
-    "static/js/2.4d97246e.chunk.js.LICENSE.txt": "/flex-react/static/js/2.4d97246e.chunk.js.LICENSE.txt",
+    "static/js/2.d958ee70.chunk.js.LICENSE.txt": "/flex-react/static/js/2.d958ee70.chunk.js.LICENSE.txt",
     "static/media/logo.6ce24c58.svg": "/flex-react/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.815e5126.js",
     "static/css/2.fb8cff11.chunk.css",
-    "static/js/2.4d97246e.chunk.js",
+    "static/js/2.d958ee70.chunk.js",
     "static/css/main.bcaaf846.chunk.css",
-    "static/js/main.787b42ea.chunk.js"
+    "static/js/main.dbb49846.chunk.js"
   ]
 }
