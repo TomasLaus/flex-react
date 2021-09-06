@@ -38,7 +38,7 @@ function ItemListContainer() {
                     {!productos ? (
                         '...cargando'
                     ) : (
-                        <Cards productos={productos}/>
+                        <Cards item={productos} />
                     )}
                 </div>
             </div>

@@ -32,10 +32,10 @@ function ItemDetailContainer() {
 
     return (
         <>
-                         {!productos ? 
-                         'Cargando...' :
-              productos.map( (item,index)=>{
-              return <ItemDetail key={item.id} item={item}/>
+            {!productos ? 
+            'Cargando...' :
+            productos.map( (item)=>{
+            return <ItemDetail key={item.id} item={item}/>
         })
       }
             

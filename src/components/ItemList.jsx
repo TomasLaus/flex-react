@@ -1,25 +1,22 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import Item from './Item';
-import ItemDetail from './ItemDetail';
 
 
 
 
-const Cards = ({ productos }) =>     {productos &&
-    productos.map( (item,index)=>{
+
+const Cards = ({ item }) => {
       return (
-      <div data-aos="fade-up" className="col-12 col-md-6 col-lg-4 col-xl-3" key={index}>
-      <div className="card">
-          <h1 className="title-card-weather">{item.name}</h1>
-          <p className="text">{item.image}</p>
-          <h1 className="title-card-weather-of">{item.price}</h1>
-          <div className="container-btns-card-weather">
-          <i className="icon-heart-btn-card far fa-heart"></i>
-          </div>
+      <div data-aos="fade-up" className="col-12 col-md-6 col-lg-4 col-xl-3" >
+      <div className="card-ecommerce" >
+          <h1 className='price'>${item.price}</h1>
+          <h1 className='name' >{item.title}</h1>
+          <div className='contenedor-boton'>
+                <button className='btn' type='button' name='button'>Comprar</button>
+             </div>
         </div>
-      </div>)
-    })
+      </div>
+    )
 }
 
 
