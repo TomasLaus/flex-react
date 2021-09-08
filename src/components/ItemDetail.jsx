@@ -8,7 +8,7 @@ function ItemDetail( {item }) {
                 <img src={item.image} className='img' alt="" />
                 <h1 className='price'>${item.price}</h1>
                 <h1 className='name' >{item.title}</h1>
-                <h1 className='desc' >{item.description}</h1>
+                <p className='desc' >{item.description}</p>
             </div>
         </div>
     )

@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
+import Item from './Item';
 
 function ItemListContainer() {
 
@@ -29,20 +30,26 @@ function ItemListContainer() {
     }, [])
 
 
-    return (
-        <div>
 
-            <h3 className='tituloProductos'>Flex - PRODUCTOS</h3>
-            <div className='container'>
-                <div className='row'>
-                    {!productos ? (
-                        '...cargando'
-                    ) : (
-                        <Cards item={productos} />
-                    )}
-                </div>
-            </div>
-        </div>
+
+
+
+    return (
+        <>
+                            <h3 className='tituloProductos'>Flex - PRODUCTOS</h3>
+                            <div className="container">
+                            <div className="row">
+                    {!productos ? 
+                        'Cargando...' :
+                        productos.map( (item)=>{
+                        return (
+                            <Item key={item.id} item={item} />
+                        )
+                    })
+                }
+                             </div>
+                        </div>
+        </>
     )
 }
 
