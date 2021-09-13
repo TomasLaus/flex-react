@@ -15,7 +15,7 @@ const ItemDetail = ( { item }) => {
 
     return (
         <div data-aos='fade-up' className="">
-            <div className='card-ecommerce-detail col-12 col-md-6 col-lg-4 col-xl-3'>
+            <div className='card-ecommerce-detail'>
                 <button onClick={handleHistory} type="button" name="button" className="volver-detail"><FontAwesomeIcon icon={faArrowLeft} /></button>
                 <img src={item.image} className='img-detail' alt="" / >
                 <h1 className='price-detail'>${item.price}</h1>
