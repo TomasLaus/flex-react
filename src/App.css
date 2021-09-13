@@ -20,7 +20,6 @@
   align-items: center;
   justify-content: center;
   color: white;
-  margin-bottom: 15px;
 }
 
 .App-link {
@@ -37,22 +36,22 @@
 }
 
 .App-body {
-  background-color: #2B2B2B;
+  background-color: #E8ECF2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
   padding-bottom: 50px;
+  padding-top: 100px;
 }
 
 .tituloProductos{
   font-size: 30px;
   font-weight: bold;
-  color: #F2F2F2;
+  color: #434852;
   text-align: center;
-  font-family: 'Poppins', sans-serif;
-  margin-top: 10%;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 5%;
 }
 
 .card-ecommerce{
@@ -62,8 +61,7 @@
   box-shadow: 1px 5px 15px rgba(11, 14, 13, 0.158);
   border-radius: 6px;
   margin-bottom: 5%;
-  background: rgb(2,0,36);
-  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(53,53,56,1) 13%, rgba(255,255,255,1) 100%);
+  background: #E8ECF2;
 }
 
 .img {
@@ -74,11 +72,11 @@
 
 .price{
   font-size: 30px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: bold;
-  text-align: center;
   margin-top: 10px;
   color: #222;
+  display: inline-block;
 }
 
 .name{
@@ -86,29 +84,103 @@
   font-size: 18px;
   color: #222;
   text-align: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  margin-top: 4%;
 }
 
-
-
-.btn {
-  background: #E6011C !important;
-  width: 100%;
-  margin-top: 10px;
-  font-family: 'Poppins',sans-serif;
+.boton-detail{
+  color: #434852 !important;
+  width: 20%;
+  font-family: 'Roboto',sans-serif;
   box-shadow: 1px 5px 15px rgba(17,23,21,.16);
-  padding: 7px 0px;
   margin-top: 30%;
-  color: #F2F2F2;
+  display: inline-block;
+  margin-left: 35%;
+  border-radius: 15px;
 }
-.btn:hover{
-  background: #F2F2F2 !important;
+.boton-detail:hover{
   transition: .5s;
-  border: 1px solid #F2F2F2;
-  color: black !important;
+  color: black;
+  width: 25%;
+  font-weight: bold;
+  display: inline-block;
 }
 
-.desc{
-  width: 15vw;
-  height: 20vh;
+
+/*---------Card detail-----------*/
+.card-ecommerce-detail{
+  height: 100%;
+  width: 70px;
+  display: block;
+  margin: 0 auto;
+  padding: 15px;
+  box-shadow: 1px 5px 15px rgba(11, 14, 13, 0.158);
+  border-radius: 6px;
+  margin-bottom: 5%;
+  background: #E8ECF2;
+}
+
+.img-detail{
+  width: 100%;
+  height: 40vh;
+  border-radius: 6px;
+}
+
+.price-detail{
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #222;
+  display: inline-block;
+}
+.name-detail{
+  height: 5vh;
+  font-size: 18px;
+  color: #222;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  margin-top: 4%;
+}
+.desc-detail{
+  height: 15vh;
+}
+
+.volver-detail{
+  color: #434852 !important;
+  width: 15%;
+  font-family: 'Roboto',sans-serif;
+  box-shadow: 1px 5px 15px rgba(17,23,21,.16);
+  display: inline-block;
+  border-radius: 15px;
+  margin-right: 100%;
+  margin-bottom: 10%;
+}
+.volver-detail:hover{
+  transition: .5s;
+  color: black;
+  width: 20%;
+  font-weight: bold;
+}
+
+.botonFinalizar{
+  color: #434852 !important;
+  font-family: 'Roboto',sans-serif;
+  box-shadow: 1px 5px 15px rgba(17,23,21,.16);
+  display: inline-block;
+  border-radius: 15px;
+  height: 5vh;
+  margin-bottom: 10%;
+}
+
+.Botones{
+  color: #434852 !important;
+  font-family: 'Roboto',sans-serif;
+  box-shadow: 1px 5px 15px rgba(17,23,21,.16);
+  display: inline-block;
+  border-radius: 15px;
+  height: 5vh;
+  margin-bottom: 10%;
 }
