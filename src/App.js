@@ -4,6 +4,8 @@ import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import { useState, useEffect } from "react";
+import { ContextProvider } from './context/CartContext';
+import Cart from './components/Cart';
 
 function App() {
       
@@ -26,23 +28,28 @@ function App() {
 
   return (
     <div className="App">
-        <BrowserRouter>
-          <header className="App-header">
-            <NavBar />
-          </header>
-          
-          <body className="App-body">
-            <Switch>
+      <ContextProvider>
+          <BrowserRouter>
+            <header className="App-header">
+              <NavBar />
+            </header>
+            
+            <body className="App-body">
+              <Switch>
 
-              <Route exact path='/' component={ItemListContainer} productos={productos}/>
-              
-              <Route exact path='/products/:id' >
-                  <ItemDetailContainer item={productos}/>
-              </Route>
+                <Route exact path='/flex-react' component={ItemListContainer} productos={productos}/>
+                
+                <Route exact path='/products/:id' >
+                    <ItemDetailContainer item={productos}/>
+                </Route>
+                
+                
+                <Route exact path='/cart' component={Cart} />
 
-            </Switch>
-          </body>
-        </BrowserRouter>
+              </Switch>
+            </body>
+          </BrowserRouter>
+        </ContextProvider>
     </div>
   );
 }

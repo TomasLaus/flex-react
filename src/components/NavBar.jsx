@@ -21,8 +21,8 @@ function NavBar() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                  <Link to='/' className='nav-link'>Inicio</Link>
-                  <Link to='/' className='nav-link'>Nosotros</Link>
+                  <Link to='/flex-react' className='nav-link'>Inicio</Link>
+                  <Link to='/flex-react' className='nav-link'>Nosotros</Link>
                   <NavDropdown title="Productos" id="basic-nav-dropdown">
                     <NavDropdown.Item>Marca</NavDropdown.Item>
                     <NavDropdown.Item>Otra marca</NavDropdown.Item>

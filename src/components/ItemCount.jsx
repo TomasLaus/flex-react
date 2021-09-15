@@ -51,8 +51,6 @@ const ItemCount = () => {
     return (
         <div style={{marginTop:'40%'}}>
 
-<div>
-            </div>
 
 
             <button className='Botones' style= {{display: "none", margin:"1%",}} onClick={() => setCount(count + 1) }>
