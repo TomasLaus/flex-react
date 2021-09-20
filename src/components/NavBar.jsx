@@ -1,4 +1,4 @@
-import { Container, Nav, Navbar, NavDropdown  } from "react-bootstrap";
+import { Container, Nav, Navbar  } from "react-bootstrap";
 import logo from '../logo.svg';
 import "bootstrap/dist/css/bootstrap.min.css";
 import CartWidget from "./CartWidget";
@@ -23,11 +23,6 @@ function NavBar() {
                 <Nav className="mr-auto">
                   <Link to='/flex-react' className='nav-link'>Inicio</Link>
                   <Link to='/flex-react' className='nav-link'>Nosotros</Link>
-                  <NavDropdown title="Productos" id="basic-nav-dropdown">
-                    <NavDropdown.Item>Marca</NavDropdown.Item>
-                    <NavDropdown.Item>Otra marca</NavDropdown.Item>
-                    <NavDropdown.Item>Otra marca</NavDropdown.Item>
-                </NavDropdown>
               </Nav>
           </Navbar.Collapse>
           <CartWidget/>

@@ -1,9 +1,8 @@
-import {useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faArrowLeft} from '@fortawesome/free-solid-svg-icons'
 import ItemCount from './ItemCount'
-import { useContext } from "react";
-import { CartContext } from "../context/CartContext";
+import { useCartContext } from "../context/CartContext"
 
 
 
@@ -12,11 +11,17 @@ const ItemDetail = ( { item }) => {
     const handleHistory = () => {
         history.push("/flex-react")
     }
-    const {id} = useParams()
 
-    const {addItem} = useContext(CartContext)
 
-    if ( item.title === id){
+    const { addProduct } = useCartContext()
+
+    const onAdd=(cant)=>{
+        console.log(cant)  
+        addProduct(item, cant)        
+    }
+
+
+
 
         return (
             <div data-aos='fade-up'>
@@ -27,10 +32,10 @@ const ItemDetail = ( { item }) => {
                     <h1 className='name-detail' >{item.title}</h1>
                     <p className='desc-detail' >{item.description}</p>
                     
-                    <ItemCount addItem={addItem}/>
+                    <ItemCount initial={1} stock={5} onAdd={onAdd} />
                 </div>
             </div>
         )
     }
-}
+
 export default ItemDetail

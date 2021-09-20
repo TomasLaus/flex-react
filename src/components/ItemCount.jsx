@@ -1,73 +1,47 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useState } from 'react';
-import {useHistory, useParams } from "react-router-dom";
-import { CartContext } from "../context/CartContext";
-import { useContext } from "react";
+import {useState} from 'react'
+import { Link } from 'react-router-dom'
+ 
 
 
-const ItemCount = ({item=[]}) => {
+const ItemCount = ({initial, stock, onAdd}) => {
+    const [count, setCount] = useState(initial)
+    const [cambiarBoton, setCambiarBoton] = useState(false)
 
-    const InputCount= ()=> {
-        
-        return <button onClick={handleDescription} className='botonFinalizar'> Finalizar compra</button>
-    }
-    const ButtonCount= ()=> {
-        return <button onClick={addItem} className='botonFinalizar'>Agregar al carrito</button>
-    
-    }
-    const [inputType, setInputType] = useState('button') 
-
-
-    const [count, setCount] = useState(0);
-
-    const Count = inputType === 'button' ? ButtonCount : InputCount
-    const stock = 12; 
-
-
-
-    
-    const history = useHistory();
-
-
-    const [cart, setCart] = useState([]);
-
-    const addItem = (item, quantity) => {
-        setCart([...cart, {item, quantity}])
+    const handlerAdd =()=>{
+        setCount(count +1)        
     }
 
-    
-    const { id } = useParams();
-    const handleDescription = id => history.push(`/cart/${id}`);
-    
-    if (count <= -1) {
-        setCount(0)              
-      } else if (count > stock) {
-          setCount(stock)
-      }
+    const handlerRm =()=>{
+        if(count > initial) setCount(count - 1)
+    }   
 
+    const handlerOnAdd=()=>{
+        onAdd(count)
+        setCount(initial)
+        setCambiarBoton(true)
+        window.confirm('¿Agregar este producto?')
+    }
 
-
-
-
-    
     return (
-        <div style={{marginTop:'40%'}}>
+        <div className="">
 
+            { cambiarBoton && 
+                <div>
+                    <Link to='/cart'>
+                        <button className="botonFinalizar">Terminar compra</button>
+                    </Link>
+                    <Link to='/flex-react'>
+                        <button className="botonFinalizar">Segir comprando</button>
+                    </Link>
+                </div>
+            }   
 
-
-            <button className='Botones' style= {{display: "none", margin:"1%",}} onClick={() => setCount(count + 1) }>
-                    +
-            </button>
-            
-            <Count />
-            
-            
-            <button className='Botones' style= {{display: "none",margin:"1%"}} onClick={() => setCount(count - 1)}>
-                    - 
-            </button>
-            <p className='pDetail' style= {{display: "none"}}>Usted tiene {count} unidad/es en el carrito</p>
-            <p>Stock disponible: {stock - count}</p>
-        </div>
+            <button className="Botones" onClick={handlerAdd}>+</button>
+            { !cambiarBoton && <button className="Botones" onClick={handlerOnAdd}>Agregar</button>}    
+            <button className="Botones" onClick={handlerRm}>-</button><br />
+            <label style={{display:'block'}}>Cantidad: {count}</label>
+        
+        </div>           
     )
 }
 

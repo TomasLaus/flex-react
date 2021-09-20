@@ -4,7 +4,7 @@ import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import { useState, useEffect } from "react";
-import { ContextProvider } from './context/CartContext';
+import  CartContextProvider  from './context/CartContext';
 import Cart from './components/Cart';
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div className="App">
-      <ContextProvider>
+      < CartContextProvider> 
           <BrowserRouter>
             <header className="App-header">
               <NavBar />
@@ -49,7 +49,7 @@ function App() {
               </Switch>
             </body>
           </BrowserRouter>
-        </ContextProvider>
+        </ CartContextProvider>
     </div>
   );
 }
