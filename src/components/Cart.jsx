@@ -1,16 +1,23 @@
 
 import { useCartContext } from "../context/CartContext"
+import { useHistory } from "react-router-dom"
 
 const Cart = () => {
 
     const {product , borrarListado, precioTotal, deleteFromCart} = useCartContext() 
-
+    
+    
+    const history = useHistory();
+    const handleHistory = () => {
+        history.push("/flex-react")
+    }
     
 
     return (
         <div className='container'>
            
            {product.map(pro =><div className='card cardCart' style={{borderRadius: '16px'}}>
+               
 
                <button onClick={() => deleteFromCart(pro.item.id)} className='deleteItemCart'>X</button>
                <img src={pro.item.image} alt="" className='cartImg' /> 
@@ -23,6 +30,8 @@ const Cart = () => {
                 <label >${precioTotal()}</label>
                </div>
            <button onClick={borrarListado} className='borrarButton'>Borrar listado Cart</button>
+           <br />
+           <button onClick={handleHistory} className='borrarButton' >Seguir comprando</button>
         </div>
     )
 }

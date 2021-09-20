@@ -1,13 +1,13 @@
 import {useState, createContext, useContext} from 'react'
 
-//creación del contexto 
+
 const CartContext = createContext()
 
-// función para usar el contexto, me ahorro dos importaciones
+
 export const useCartContext = () => useContext(CartContext)
 
 
-// inyectar los estados y funciones globales, enmascaro provider
+
 function CartContextProvider({children}) {
 
     const [product, setProducts] = useState([]);
@@ -34,13 +34,11 @@ function CartContextProvider({children}) {
       return setProducts(deleteProduct);
     };   
     
-    //[1,2,3,4] Acum= 0 => 1, 1+2 =>  3+3
 
     const iconCart = () => {
       return product.reduce( (acum, valor)=> acum + valor.quantity, 0) 
-      //return product.length
-    }
 
+    }
 
     const borrarListado=()=>{
         setProducts([])
@@ -54,7 +52,6 @@ function CartContextProvider({children}) {
 
    
 
-    // const clearCart = () => setProducts([]);
    
    
     console.log(product)

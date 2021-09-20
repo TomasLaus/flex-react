@@ -199,7 +199,7 @@
 
 .cardCart{
   height: 100%;
-  width: 50%;
+  width: 25vw;
   padding: 15px;
   box-shadow: 1px 5px 15px rgba(11, 14, 13, 0.158);
   border-radius: 16px;
@@ -242,7 +242,7 @@
   box-shadow: 1px 5px 15px rgba(17,23,21,.16);
   border-radius: 15px;
   height: 5vh;
-  margin-top: 5%;
+  margin-top: 2%;
   width: 40%;
 }
 

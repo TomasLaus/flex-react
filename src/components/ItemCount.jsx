@@ -20,10 +20,11 @@ const ItemCount = ({initial, stock, onAdd}) => {
         setCount(initial)
         setCambiarBoton(true)
         window.confirm('¿Agregar este producto?')
+
     }
 
     return (
-        <div className="">
+        <div>
 
             { cambiarBoton && 
                 <div>
@@ -36,10 +37,13 @@ const ItemCount = ({initial, stock, onAdd}) => {
                 </div>
             }   
 
-            <button className="Botones" onClick={handlerAdd}>+</button>
-            { !cambiarBoton && <button className="Botones" onClick={handlerOnAdd}>Agregar</button>}    
-            <button className="Botones" onClick={handlerRm}>-</button><br />
-            <label style={{display:'block'}}>Cantidad: {count}</label>
+            { !cambiarBoton &&    
+             <div>
+                <button className="Botones" onClick={handlerAdd}>+</button>
+                 <button className="Botones" onClick={handlerOnAdd}>Agregar</button> 
+                <button className="Botones" onClick={handlerRm}>-</button><br />
+                <label style={{display:'block'}}>Cantidad: {count}</label>
+             </div>}
         
         </div>           
     )

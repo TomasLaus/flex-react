@@ -16,7 +16,7 @@ function CartWidget ()  {
         <div className="CartWidget">
             <Container>
                 <NavLink to={`/cart`} style={{textDecoration: 'none'}} className="text-secondary" >
-                 <label style={{background:'#f2f2f2', borderRadius:'10px', padding:'2px'}}>{ iconCart() } </label>   <FontAwesomeIcon icon={faShoppingCart} style= {{color: '#fff', display: 'inline-block',}}/>                       
+                 <label style={{background:'#f2f2f2', borderRadius:'34px', fontSize:'10px', padding:'5px'}}>{ iconCart() } </label>   <FontAwesomeIcon icon={faShoppingCart} style= {{color: '#fff', display: 'inline-block',}}/>                       
                 </NavLink>                
             </Container>
         </div>
