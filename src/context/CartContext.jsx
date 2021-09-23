@@ -50,7 +50,14 @@ function CartContextProvider({children}) {
       return product.reduce((acum, valor)=>(acum + (valor.quantity * valor.item.price)), 0) 
     }
 
-   
+   const mostrarItemsCarrito = () => {
+   return product.map(pro =><div className='card cardCart' style={{borderRadius: '16px'}}>
+    <button onClick={() => deleteFromCart(pro.item.id)} className='deleteItemCart'>X</button>
+    <img src={pro.item.imageUrl} alt="" className='cartImg' /> 
+    <p className='cartTitle'>{ pro.item.title}</p>
+    <p className='cartQuantity'>Cantidad: { pro.quantity}</p> 
+    </div>)
+   }
 
    
    
@@ -63,7 +70,8 @@ function CartContextProvider({children}) {
             iconCart,
             borrarListado,
             precioTotal,
-            deleteFromCart
+            deleteFromCart,
+            mostrarItemsCarrito
         }}>
             {children}
         </CartContext.Provider>

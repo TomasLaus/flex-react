@@ -1,31 +1,38 @@
 import {useEffect, useState } from "react"
-import Aos from 'aos';
 import 'aos/dist/aos.css'
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import {Spinner} from "react-bootstrap";
+import { getFirestore } from "../service/getFirebase";
 
 
 
+function ItemDetailContainer() {
+    const [loading, setLoading] = useState(true)
 
-const ItemDetailContainer = ({ item=[] })=>{
     const { id } = useParams();
-    const items = item.find(items => items.title === id);
-    console.log(items);
 
+    const [item, setItem] = useState({
+        data:{}
+    });
 
-        useEffect(() => {
-            Aos.init({duration: 2000})
-        }, [])
+    useEffect(() => {
+        const db = getFirestore();
+        const itemCollection = db.collection("items");
+        const itemById = itemCollection.doc(id);
 
-        const [loading, setLoading] = useState(true);
-  
-        useEffect(() => {
+        itemById.get().then((querySnapshot) => {
+            if(Object.keys(querySnapshot).length === 0){
+                console.log("No results!");
+            };
+            setItem(querySnapshot.data());
+            setLoading(false)
+        }).catch((error) => {
+            console.log("Error searching items", error);
+        });
+    }, [id]);
+
     
-          setTimeout(() => {
-            setLoading(false);
-          }, 3000);
-        }, []);
     
 
 
@@ -41,7 +48,7 @@ const ItemDetailContainer = ({ item=[] })=>{
                         </Spinner> 
                         
                         : 
-                        items && <ItemDetail item={items} />}
+                        <ItemDetail item={item}/>}
                             
                         
                         </div>

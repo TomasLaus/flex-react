@@ -6,28 +6,29 @@ import { useCartContext } from "../context/CartContext"
 
 
 
-const ItemDetail = ( { item }) => {
-    const history = useHistory();
-    const handleHistory = () => {
-        history.push("/flex-react")
-    }
-
-
+function ItemDetail( { item } ) {
+     
     const { addProduct } = useCartContext()
-
+   
     const onAdd=(cant)=>{
         console.log(cant)  
         addProduct(item, cant)        
     }
 
 
+    const history = useHistory();
+    const handleHistory = () => {
+        history.push("/flex-react")
+    }
 
 
-        return (
+    return (
+        <>
+            
             <div data-aos='fade-up'>
                 <div className='card-ecommerce-detailcol-12 col-md-6 col-lg-4 col-xl-3 mx-auto'>
                     <button onClick={handleHistory} type="button" name="button" className="volver-detail"><FontAwesomeIcon icon={faArrowLeft} /></button>
-                    <img src={item.image} className='img-detail' alt="" / >
+                    <img src={item.imageUrl} className='img-detail' alt="" / >
                     <h1 className='price-detail'>${item.price}</h1>
                     <h1 className='name-detail' >{item.title}</h1>
                     <p className='desc-detail' >{item.description}</p>
@@ -35,7 +36,9 @@ const ItemDetail = ( { item }) => {
                     <ItemCount initial={1} stock={5} onAdd={onAdd} />
                 </div>
             </div>
-        )
-    }
+
+        </>
+    )
+}
 
 export default ItemDetail

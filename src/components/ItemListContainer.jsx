@@ -5,6 +5,9 @@ import Aos from 'aos';
 import 'aos/dist/aos.css'
 import Item from './Item';
 import {Spinner} from "react-bootstrap";
+import { getFirestore } from '../service/getFirebase';
+import { useParams } from 'react-router';
+import ItemList from './ItemList';
 
 function ItemListContainer() {
 
@@ -13,22 +16,34 @@ function ItemListContainer() {
         Aos.init({duration: 2000})
     }, [])
 
-    const url = (`https://fakestoreapi.com/products/`)
-    const [productos, setProductos] = useState([]);
+    const [items, setItems] = useState([])
     const [loading, setloading] = useState(true)
-          const fetchApi = async ()=> {
-          const response = await fetch(url);
-          const responseJSON = await response.json();
-          setloading(false)
-          setProductos(responseJSON)
-    }
+
+    const { category } = useParams()
+
 
 
   
-  
-      useEffect(() => {
-        fetchApi();
-      }, [])
+    useEffect(() => {       
+        const db = getFirestore()
+         const queryDB = db.collection('items')
+
+        const conditionQuery = category ? 
+                queryDB.where('categoryId', '==', category) 
+            : 
+                queryDB 
+      
+            conditionQuery.get()
+            .then(data => {
+                if(data.size===0){
+                    console.log('no hay nada')
+                }
+                setItems( data.docs.map(item => ( { id: item.id, ...item.data() } ) ) )    
+                setloading(false)            
+            })  
+        
+    }, [category])
+
 
 
 
@@ -47,11 +62,7 @@ function ItemListContainer() {
                         </Spinner>
 
                         :
-                        productos.map( (item)=>{
-                        return (
-                            <Item key={item.id} item={item} />
-                        )
-                    })
+                        <ItemList items={items} /> 
                 }
                              </div>
                         </div>
