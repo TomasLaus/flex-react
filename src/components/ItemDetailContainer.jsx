@@ -11,7 +11,7 @@ function ItemDetailContainer() {
     const [loading, setLoading] = useState(true)
 
     const { id } = useParams();
-
+    const [ categorias, setCategorias ] = useState([])
     const [item, setItem] = useState({
         data:{}
     });
@@ -34,6 +34,20 @@ function ItemDetailContainer() {
 
     
     
+    useEffect(() => {
+        const db = getFirestore()
+        db.collection('categorias').get()
+        .then(resp => {
+            if(resp.size!==0){
+                setCategorias( resp.docs.map(cat => ( {id: cat.id, ...cat.data()} )) )
+                
+            }
+        } )
+        .catch(err=>console.log(err))
+        .finally(()=> setLoading(false))
+       
+    }, [])
+
 
 
     return (
@@ -48,7 +62,7 @@ function ItemDetailContainer() {
                         </Spinner> 
                         
                         : 
-                        <ItemDetail item={item}/>}
+                        <ItemDetail item={item} categorias={categorias}/>}
                             
                         
                         </div>

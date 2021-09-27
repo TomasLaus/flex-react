@@ -6,6 +6,8 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import { useState, useEffect } from "react";
 import  CartContextProvider  from './context/CartContext';
 import Cart from './components/Cart';
+import Home from './components/Home';
+import { Checkout } from './components/Checkout';
 
 function App() {
       
@@ -37,11 +39,13 @@ function App() {
             <body className="App-body">
               <Switch>
 
-                <Route exact path='/flex-react' component={ItemListContainer} productos={productos}/>
-                
+                <Route exact path='/flex-react' component={Home}/>
+                <Route exact path='/products' component={ItemListContainer} productos={productos} />
+                <Route path="/category/:categoryId" component={ItemListContainer}/>
                 <Route exact path='/products/:id' >
                     <ItemDetailContainer item={productos}/>
                 </Route>
+                <Route exact path="/checkout" component ={Checkout} />
                 
                 
                 <Route exact path='/cart' component={Cart} />

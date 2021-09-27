@@ -6,7 +6,7 @@ import { useCartContext } from "../context/CartContext"
 
 
 
-function ItemDetail( { item } ) {
+function ItemDetail( { item, categorias } ) {
      
     const { addProduct } = useCartContext()
    
@@ -26,16 +26,23 @@ function ItemDetail( { item } ) {
         <>
             
             <div data-aos='fade-up'>
-                <div className='card-ecommerce-detailcol-12 col-md-6 col-lg-4 col-xl-3 mx-auto'>
-                    <button onClick={handleHistory} type="button" name="button" className="volver-detail"><FontAwesomeIcon icon={faArrowLeft} /></button>
-                    <img src={item.imageUrl} className='img-detail' alt="" / >
-                    <h1 className='price-detail'>${item.price}</h1>
-                    <h1 className='name-detail' >{item.title}</h1>
-                    <p className='desc-detail' >{item.description}</p>
-                    
-                    <ItemCount initial={1} stock={5} onAdd={onAdd} />
+            <div className="d-flex justify-content-center my-5">
+            <div className="card animate__bounceIn" style={{width: '30rem',padding:'10px'}}>
+            <button onClick={handleHistory} type="button" name="button" className="volver-detail"><FontAwesomeIcon icon={faArrowLeft} /></button>
+                <img src={item.imageUrl} alt={item.description} className="card-img-top border border-dark rounded "/>
+                <div className="card-body">
+                    <h5 className="card-title">{item.title}</h5>
+                    <p className="card-text">{item.description}</p>
                 </div>
-            </div>
+                <ul className="list-group list-group-flush">
+                    <li className="list-group-item">Precio: ${item.price}</li>
+                    <li className="list-group-item"><ItemCount initial={1} stock={5} onAdd={onAdd} /></li>
+
+                </ul>
+                </div>
+                </div>
+                </div>
+                    
 
         </>
     )

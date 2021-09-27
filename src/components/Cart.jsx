@@ -1,6 +1,6 @@
 
 import { useCartContext } from "../context/CartContext"
-import { useHistory } from "react-router-dom"
+import { NavLink, useHistory } from "react-router-dom"
 
 const Cart = () => {
 
@@ -9,9 +9,12 @@ const Cart = () => {
     
     const history = useHistory();
     const handleHistory = () => {
-        history.push("/flex-react")
+        history.push("/products")
     }
     
+    const handleCheckout = () =>{
+        history.push('/checkout')
+    }
 
     return (
         <div className='container'>
@@ -26,6 +29,9 @@ const Cart = () => {
                      <button onClick={borrarListado} className='borrarButton'>Borrar carrito</button>
                      <br />
                      <button onClick={handleHistory} className='borrarButton' >Seguir comprando</button>
+                     <br />
+                     <button onClick={handleCheckout} className='borrarButton' >Finalizar compra</button>
+                     
                     </div>
        
                :
