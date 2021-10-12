@@ -5,7 +5,7 @@ import 'firebase/firestore';
 import { getFirestore } from "../../service/getFirebase";
 import swal from 'sweetalert';
 
-import {Formulario, Label, ContenedorTerminos, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError} from './Formularios';
+import {Formulario, Label, ContenedorTerminos, ContenedorBotonCentrado, MensajeExito, MensajeError} from './Formularios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import Input from './Inputs';
