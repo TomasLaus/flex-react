@@ -1,6 +1,6 @@
 
-import { useCartContext } from "../context/CartContext"
-import { NavLink, useHistory } from "react-router-dom"
+import { useCartContext } from "../../context/CartContext"
+import { useHistory } from "react-router-dom"
 
 const Cart = () => {
 
@@ -24,13 +24,13 @@ const Cart = () => {
                 precioTotal() > 0 ? 
                     <div>
                         {mostrarItemsCarrito()}
-                        <label className='card cardCart' style={{fontWeight:'bold'}}>Precio total de su compra: ${precioTotal()}</label>
+                        <label className=" animate__bounceIn d-flex justify-content-center my-5" style={{fontWeight:'bold'}}>Precio total de su compra: ${precioTotal()}</label>
                                     
-                     <button onClick={borrarListado} className='borrarButton'>Borrar carrito</button>
+                     <button onClick={borrarListado} className='borrarButton'>Borrar todo</button>
                      <br />
                      <button onClick={handleHistory} className='borrarButton' >Seguir comprando</button>
                      <br />
-                     <button onClick={handleCheckout} className='borrarButton' >Finalizar compra</button>
+                     <button onClick={handleCheckout} className='borrarButton' >Finalizar</button>
                      
                     </div>
        

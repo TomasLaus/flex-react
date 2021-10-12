@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 import {Spinner} from "react-bootstrap";
-import { getFirestore } from '../service/getFirebase';
+import { getFirestore } from '../../service/getFirebase';
 import { useParams } from 'react-router';
 import ItemList from './ItemList';
 

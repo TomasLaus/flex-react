@@ -3,7 +3,7 @@ import 'aos/dist/aos.css'
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import {Spinner} from "react-bootstrap";
-import { getFirestore } from "../service/getFirebase";
+import { getFirestore } from "../../service/getFirebase";
 
 
 

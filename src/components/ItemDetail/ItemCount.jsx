@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import { Link } from 'react-router-dom'
- 
+import swal from 'sweetalert';
+
 
 
 const ItemCount = ({initial, stock, onAdd}) => {
@@ -19,7 +20,7 @@ const ItemCount = ({initial, stock, onAdd}) => {
         onAdd(count)
         setCount(initial)
         setCambiarBoton(true)
-        window.confirm('¿Agregar este producto?')
+        swal("¡Producto agregado al carrito!", "Gracias por elegirnos", "success");
 
     }
 
@@ -31,7 +32,7 @@ const ItemCount = ({initial, stock, onAdd}) => {
                     <Link to='/cart'>
                         <button className="botonFinalizar">Terminar compra</button>
                     </Link>
-                    <Link to='/flex-react'>
+                    <Link to='/products'>
                         <button className="botonFinalizar">Segir comprando</button>
                     </Link>
                 </div>
